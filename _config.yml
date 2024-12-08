@@ -16,7 +16,7 @@ timezone:
 
 title: Walid Dib # the main title
 
-tagline: Gamedev and startups # it will display as the subtitle
+tagline: I talk about gamedev and startups # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A blog by Walid Dib featuring learning insights into game development with Godot, and building startups in the Middle East.
