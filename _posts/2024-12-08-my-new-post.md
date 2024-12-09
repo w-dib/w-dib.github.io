@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My New Post
+title: Why I write
 date: 2021-04-25T22:23:00.000Z
 categories:
   - gamedev
