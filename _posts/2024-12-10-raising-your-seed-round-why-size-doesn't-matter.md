@@ -7,8 +7,6 @@ tags: []
 categories:
   - startups
 permalink: /raising-seed-size-doesn-matter/
-image:
-  height: "431"
 ---
 If you're in a MENA-based startup, and you're reading this article on LinkedIn, then you've come across dozens of headlines about Arab startups raising double digit seed and series A rounds in 2021. It would make sense, since 2021 was MENA's record breaking year in term of startup VC funding, [at a whopping $2.6B](https://magnitt.com/research/state-of-startup-funding-2022-50796) invested into the region.
 

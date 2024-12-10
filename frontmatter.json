@@ -82,14 +82,14 @@
             {
               "title": "Width",
               "name": "width",
-              "default": "730",
+              "default": "",
               "type": "number",
               "required": false
             },
             {
               "title": "Height",
               "name": "height",
-              "default": "431",
+              "default": "",
               "type": "number",
               "required": false
             },
