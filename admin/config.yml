@@ -8,12 +8,24 @@ public_folder: "/assets/img/uploads" # The folder where the files will be served
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the CMS UI
-    folder: "_posts" # The path to the folder where the blog posts are stored
+    folder: "_posts" # Path to the folder where the blog posts are stored
     create: true # Allow users to create new blog posts
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually stored in front matter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
+    fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: "DD-MM-YYYY",
+        } # Update for date format
+      - {
+          label: "Categories",
+          name: "categories",
+          widget: "list",
+          default: ["general"],
+          allow_add: true,
+        }
       - {
           label: "Featured Image",
           name: "thumbnail",
