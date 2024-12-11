@@ -17,6 +17,9 @@
   "frontMatter.framework.id": "jekyll",
   "frontMatter.git.enabled": true,
   "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.taxonomy.slugTemplate": "{{title}}",
+  "frontMatter.taxonomy.alignFilename": true,
+
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
