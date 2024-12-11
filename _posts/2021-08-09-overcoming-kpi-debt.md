@@ -4,7 +4,8 @@ description: ""
 date: 2021-08-09T18:07:16.665Z
 preview: ""
 tags: []
-categories: []
+categories:
+  - startups
 ---
 Although I knew what the acronym KPI *stood* *for* in 2018, I couldn't understand what my company's KPIs were at the time no matter how much I researched the topic. I later attributed it to the fact that our team was still [building solutions looking for problems](https://wdib.substack.com/p/pivotwithgrace). In other words, we didn't have clear KPIs because our product itself lacked clarity.
 

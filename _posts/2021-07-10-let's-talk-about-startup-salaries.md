@@ -4,7 +4,8 @@ description: ""
 date: 2021-07-10T18:03:11.152Z
 preview: ""
 tags: []
-categories: []
+categories:
+  - startups
 ---
 About a month ago, I posted a [survey](https://www.linkedin.com/feed/update/urn:li:activity:6806872204781899776/) on LinkedIn asking people in my network to anonymously share their salaries, roles, seniority, geography, and company funding stage. I thought I'd end up with at least 50 respondents, but the survey concluded with just 27. I shouldn't have been surprised, as this small data set was admittedly restricted to people within my network. I mean, I'm just some guy. I'm not exactly [Nielsen](https://en.wikipedia.org/wiki/Nielsen_Holdings) over here.
 

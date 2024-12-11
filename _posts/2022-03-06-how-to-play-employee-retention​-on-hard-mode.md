@@ -4,7 +4,8 @@ description: ""
 date: 2022-03-06T18:07:54.614Z
 preview: ""
 tags: []
-categories: []
+categories:
+  - startups
 ---
 ![Blog Image](https://cdn.sanity.io/images/tbcelk7e/production/b6f7fe333fc21a1474935c97a71c47799c77729c-752x423.png)
 
