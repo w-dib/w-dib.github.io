@@ -118,7 +118,7 @@ comments:
     repo: # <gh-username>/<repo>
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
-  provider: giscus
+  provider:
   giscus:
     repo: w-dib/w-dib.github.io
     repo_id: R_kgDONaq1kA
