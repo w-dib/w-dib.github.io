@@ -21,12 +21,12 @@ The second bullet point is irrelevant to this blog post, because I spent days di
 
 Let's take a step back: understanding collision layers and collision masks is, like, [Godot 101](https://docs.godotengine.org/en/stable/tutorials/physics/physics_introduction.html#collision-layers-and-masks). Assigning a node its layers is straight forward through the inspector, and allows nodes to identify when other bodies or areas collide with them. Layers define which "group(s)" your node belongs to, and Masks define which "group(s)" your node can interact with. In the inspector, doing this is as easy as a simply clicking which layers and masks you want your node to belong to. 
 
-![](/assets/lib/Godot%20collisions.png)
+![](/public/assets/lib/Godot%20collisions.png)
 _The inspector shows you up to 32 layers and masks you can allow your node to belong to._
 
 I see little checkboxes labeled "Layer 1," "Layer 2," "Layer 3," etc. Great, so if I want to enable layers 1, 2, and 3, I just click those three checkboxes and call it a day. Armed with the above basic knowledge, I wanted to see if I can trigger the `input_event` signal of a card (an `Area2D` in this case) by clicking on it. It worked in its most basic sense: clicking on a single card triggered the `input_event` signa. Unfortunately, this approach proved janky the moment there were two cards overlapping, no matter how small the overlap was, which completely defeated the purpose. Why? Because the entire idea of Solitaire is about stacking cards on top of eachother. The below image explains the issue:
 
-![](/assets/lib/card_overlap.png)
+![](/public/assets/lib/card_overlap.png)
 _Clicking on the dangerzone activates both cards_
 
 If I click on a stack of cards (`Area2D`s), it would trigger the `input_event` of all the cards in the stack, because the `input_event` triggers if the mouse clicks _anywhere_ on the `Area2D`. I needed a new approach, which was to dynamically identify a node's collision layer on the exact pixel the mouse clicked at.
