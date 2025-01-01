@@ -140,7 +140,7 @@ print(0x000d)   # 13 in hex
 print(0xd)      # shorter hex, also 13
 ```
 
-So if you ever wonder: *"Why is the code using 13 to turn on layers 1, 3, and 4?"*---well, it's because 13 is the sum of 1 (2^0) + 4 (2^2) + 8 (2^3). Mind-boggling at first, but it clicks once you see it in action.
+So if you ever wonder: *"Why is the code using 13 to turn on layers 1, 3, and 4?"*---well, it’s because 13 is the sum of $1 (2^0)$ + $4 (2^2)$ + $8 (2^3)$. Mind-boggling at first, but it clicks once you see it in action.
 
 ### Export Annotations in GDScript
 
@@ -163,4 +163,6 @@ The next time you're banging your head on the keyboard wondering why your collis
     -   Binary = *0b...*
     -   Hexadecimal = *0x...*
 
-[^footnote]: Each checkbox in the Inspector represents one **bit** in a binary number. That bit’s position corresponds to a power of two. For example, if you check “Layer 3,” under the hood you’re flipping the bit for 2^(3-1) = 4. Checking “Layer 1” flips 2^(1-1) = 1, and so forth. This is how Godot tracks multiple layers in a single integer—each layer is just one more bit in the binary representation. 
+[^footnote]: Each checkbox in the Inspector represents one **bit** in a binary number. That bit’s position corresponds to a power of two. For example, if you check “Layer 3,” under the hood you’re flipping the bit for $2^{3-1} = 4$. Checking “Layer 1” flips $2^{1-1} = 1$, and so forth. This is how Godot tracks multiple layers in a single integer—each layer is just one more bit in the binary representation.
+
+
