@@ -1,13 +1,13 @@
 ---
 title: Godot Collision Layer Confusion
-description: "My personal experience grappling with Godot 4.4.dev7's collision layers and masks"
+description: "My personal experience grappling with Godot 4's collision layers and masks"
 date: 2025-01-01T12:57:14.547Z
 preview: ""
 tags: []
 categories: [godot engine]
 ---
 
-> This post is based on my experience as an amateur Godot developer using **Godot 4.4.dev7**. I'm basically giving a blow-by-blow account of how I discovered the difference between simple collision layers in the Inspector versus the hex/binary/decimal madness in the code editor. 
+> This post is based on my experience as an amateur Godot developer using **Godot 4**. I'm basically giving a blow-by-blow account of how I discovered the difference between simple collision layers in the Inspector versus the hex/binary/decimal madness in the code editor. 
 {: .prompt-tip }
 
 ### Solitaire, collision layers, and raycasts
@@ -98,11 +98,7 @@ Because Godot can have up to 32 collision layers, using a single integer bitmask
    - The everyday integers we use, e.g. `13`, `42`, `2025`.  
    - Under the hood, this decimal is still the same bitmask. It’s just a different notation.
 
----
-
-### Why is Layer 1 in Code = 2^(1-1) = 1, but Layer 3 = 2^(3-1) = 4?
-
-Each checkbox in the Inspector corresponds to a **power of two** in code[^1]. If you want to enable "Layer 3," you're actually enabling the bit that stands for 2^(3-1) = 4. Meanwhile, "Layer 1" is 2^(1-1) = 1, "Layer 2" is 2^(2-1) = 2, etc.
+Each checkbox in the Inspector corresponds to a **power of two** in code[^footnote]. If you want to enable "Layer 3," you're actually enabling the bit that stands for 2^(3-1) = 4. Meanwhile, "Layer 1" is 2^(1-1) = 1, "Layer 2" is 2^(2-1) = 2, etc.
 
 In decimal terms:
 
@@ -173,4 +169,4 @@ The next time you're banging your head on the keyboard wondering why your collis
     -   Binary = *0b...*
     -   Hexadecimal = *0x...*
 
-[^1]Each checkbox in the Inspector represents one **bit** in a binary number. That bit’s position corresponds to a power of two. For example, if you check “Layer 3,” under the hood you’re flipping the bit for 2^(3-1) = 4. Checking “Layer 1” flips 2^(1-1) = 1, and so forth. This is how Godot tracks multiple layers in a single integer—each layer is just one more bit in the binary representation. 
+[^footnote]: Each checkbox in the Inspector represents one **bit** in a binary number. That bit’s position corresponds to a power of two. For example, if you check “Layer 3,” under the hood you’re flipping the bit for 2^(3-1) = 4. Checking “Layer 1” flips 2^(1-1) = 1, and so forth. This is how Godot tracks multiple layers in a single integer—each layer is just one more bit in the binary representation. 
