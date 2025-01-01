@@ -10,10 +10,7 @@ categories: [godot engine]
 > This post is based on my experience as an amateur Godot developer using **Godot 4.4.dev7**. I'm basically giving a blow-by-blow account of how I discovered the difference between simple collision layers in the Inspector versus the hex/binary/decimal madness in the code editor. 
 {: .prompt-tip }
 
-My Initial Frustration
-----------------------
-
-##Solitaire, collision layers, and raycasts
+### Solitaire, collision layers, and raycasts
 
 Having recently played [Balatro](https://www.playbalatro.com/), I wanted to learn how 2D card game mechanics work in Godot, so I challenged myself to learn how to code Solitaire 🃏. My main focus was to learn two things:
 
@@ -120,10 +117,10 @@ In decimal terms:
 var layer1 = 1     # 2^(1-1) = 1
 var layer2 = 2     # 2^(2-1) = 2
 var layer3 = 4     # 2^(3-1) = 4
-var layer4 = 8     # 2^(4-1) = 8```
+var layer4 = 8     # 2^(4-1) = 8
+```
 
 So enabling layers 1, 3, and 4 in code is:
-
 
 ```gdscript
 var layers_enabled = layer1 + layer3 + layer4  # 1 + 4 + 8 = 13
@@ -132,8 +129,7 @@ print(layers_enabled)  # prints 13
 
 That same `13` can also be expressed in binary as `0b1101`, or in hexadecimal as `0xd`. This is why the Godot Docs say you can specify the collision layer in any of those formats---it all compiles down to the same bitmask.
 
-Real Example: Debugging My Collision
-------------------------------------
+## Real Example: Debugging My Collision
 
 Let's say I tried the following line in code and wondered why it turned on layers 1, 3, and 4:
 
@@ -172,8 +168,6 @@ This basically allows you to edit a bitmask directly in the Godot Inspector with
 
 > "Export annotations can be used to export bitmasks in the editor with a user-friendly GUI."
 {: .prompt-tip }
-
-## Conclusion
 
 **In short**, if you're confused why Layer 3 in the Inspector doesn't line up with "3" in your code, it's because the Inspector just labels them as 1, 2, 3... in a user-friendly way, but under the hood, **each "layer number" is a different bit** in a binary integer.
 
