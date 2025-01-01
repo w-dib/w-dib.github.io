@@ -5,6 +5,7 @@ date: 2025-01-01T12:57:14.547Z
 preview: ""
 tags: []
 categories: [godot engine]
+math: true
 ---
 
 > This post is based on my experience as an amateur Godot developer using **Godot 4**. I'm basically giving a blow-by-blow account of how I discovered the difference between simple collision layers in the Inspector versus the hex/binary/decimal madness in the code editor. 
@@ -81,20 +82,16 @@ Because Godot can have up to 32 collision layers, using a single integer bitmask
 1. **Binary (`0b...`)**  
    - Each digit is either 0 or 1, representing **powers of 2** from right to left.  
    - For instance, `0b1101` means:  
-     ```txt
-     (1 × 2^3) + (1 × 2^2) + (0 × 2^1) + (1 × 2^0) 
-     = 8 + 4 + 0 + 1 
-     = 13
-     ```
+      $$(1 \times 2^3) + (1 \times 2^2) + (0 \times 2^1) + (1 \times 2^0) = 8 + 4 + 0 + 1 = 13$$
    - So, `0b1101` is just another way of writing 13.
 
-2. **Hexadecimal (`0x...`)**  
+1. **Hexadecimal (`0x...`)**  
    - Each digit is 0–9 or A–F (where A=10, B=11, C=12, **D=13**, E=14, and F=15). 
    - Each hex digit corresponds to **4 bits** (since each bit can be 0 or 1, and 2^4 = 16 possible values).  
    - We know that **D=13**, therefore `0xD` is `13` in decimal, which is `1101` in binary (8 + 4 + 0 + 1 = 13). Hence, `0x000d` is just another way of writing `13` in hexadecimal. 
    - The prefix `0x` indicates that the number is in base 16.
 
-3. **Decimal (plain numbers)**  
+2. **Decimal (plain numbers)**  
    - The everyday integers we use, e.g. `13`, `42`, `2025`.  
    - Under the hood, this decimal is still the same bitmask. It’s just a different notation.
 
