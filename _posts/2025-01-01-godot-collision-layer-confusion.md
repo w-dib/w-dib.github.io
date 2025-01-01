@@ -155,10 +155,7 @@ The [docs](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/g
 
 This basically allows you to edit a bitmask directly in the Godot Inspector with a friendly GUI. When you check/uncheck boxes in that field, you're effectively flipping those bits in code.
 
-> "Export annotations can be used to export bitmasks in the editor with a user-friendly GUI."
-{: .prompt-tip }
-
-**In short**, if you're confused why Layer 3 in the Inspector doesn't line up with "3" in your code, it's because the Inspector just labels them as 1, 2, 3... in a user-friendly way, but under the hood, **each "layer number" is a different bit** in a binary integer.
+---
 
 The next time you're banging your head on the keyboard wondering why your collisions aren't working:
 
