@@ -136,3 +136,5 @@ I think my problems boil down to this:
 -   What if what I write has already been written before?
 
 I'm sorry for the anticlimactic ending: the truth is I don't know why I write, but I know that I can finally enjoy writing again, and that's good enough for now.
+
+![](/juli-kosolapova-pZ-XFIrJMtE-unsplash.jpg)
