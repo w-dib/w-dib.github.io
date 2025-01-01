@@ -3,6 +3,9 @@ title: Why I Write
 description: ""
 date: 2021-04-25T22:23:00.000Z
 preview: ""
+image:
+  path: public/assets/lib/keyboard.png
+  alt: pivot with the bros
 tags: []
 categories:   
   - thoughts

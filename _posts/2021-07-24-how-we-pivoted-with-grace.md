@@ -3,15 +3,14 @@ title: How we pivoted with grace
 description: ""
 date: 2021-07-24T18:05:26.537Z
 preview: ""
+image:
+  path: public/assets/lib/pivot.png
+  alt: pivot with the bros
 tags: []
 categories: startups
 ---
 How we pivoted our startup with grace
 =====================================
-
-July 24, 2021
-
-![Blog Image](https://cdn.sanity.io/images/tbcelk7e/production/31fdd045070f5f8b572d9fffa4f6d26cf9c0e121-1456x819.webp)
 
 If you've been in the MENA startup ecosystem, you've definitely heard that "90% of startups fail before they do X or Y". A [report conducted by CBS Insights](https://www.cbinsights.com/research/startup-failure-post-mortem/?utm_campaign=cbi-social&utm_content=173297792&utm_medium=social&utm_source=linkedin&hss_channel=lcp-1140722#2021update2) on US startups suggested that "70% of upstart tech companies fail --- usually around 20 months after first raising financing (with around $1.3M in total funding closed)".
 

@@ -3,11 +3,13 @@ title: How to play "Employee Retention"​ on hard mode
 description: ""
 date: 2022-03-06T18:07:54.614Z
 preview: ""
+image:
+  path: https://cdn.sanity.io/images/tbcelk7e/production/b6f7fe333fc21a1474935c97a71c47799c77729c-752x423.png
+  alt: Employee Retention on Hard mode
 tags: []
 categories:
   - startups
 ---
-![Blog Image](https://cdn.sanity.io/images/tbcelk7e/production/b6f7fe333fc21a1474935c97a71c47799c77729c-752x423.png)
 
 So you've closed a funding round. Congratulations! Brew yourself a coffee and buckle up, because it's about to get interesting. You say your company's userbase is growing by 15% month-on-month? That's awesome, but...
 

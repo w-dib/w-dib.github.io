@@ -3,6 +3,9 @@ title: Overcoming KPI debt
 description: ""
 date: 2021-08-09T18:07:16.665Z
 preview: ""
+image:
+  path: public/assets/lib/KPIs.png
+  alt: pivot with the bros
 tags: []
 categories:
   - startups

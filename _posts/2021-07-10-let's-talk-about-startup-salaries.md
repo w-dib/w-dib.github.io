@@ -3,6 +3,9 @@ title: Let's talk about startup salaries
 description: ""
 date: 2021-07-10T18:03:11.152Z
 preview: ""
+image:
+  path: public/assets/lib/salary.png
+  alt: startup salaries
 tags: []
 categories:
   - startups
@@ -10,8 +13,6 @@ categories:
 About a month ago, I posted a [survey](https://www.linkedin.com/feed/update/urn:li:activity:6806872204781899776/) on LinkedIn asking people in my network to anonymously share their salaries, roles, seniority, geography, and company funding stage. I thought I'd end up with at least 50 respondents, but the survey concluded with just 27. I shouldn't have been surprised, as this small data set was admittedly restricted to people within my network. I mean, I'm just some guy. I'm not exactly [Nielsen](https://en.wikipedia.org/wiki/Nielsen_Holdings) over here.
 
 To make matters worse, more than 85% of the respondents were based in the UAE, so any plan to study startup compensations within the wider MENA region was out of the question. On the bright side, if we assume that the 27 who responded were from 27 *different* startups, we may have a somewhat decent data set.
-
-![ ](https://cdn.sanity.io/images/tbcelk7e/production/6fc9dba3778ab11a4d5b0069ee1a3c0acdbc04e1-1456x613.webp)
 
 If we wanted the real data, we'd have to consult recruiters and VCs, who have mountains of startup data in isolated silos - both in terms of salaries and employee stock ownership plans (ESOPs). This info is unlikely to be shared by either type of entity, because its a conflict of interest for recruiters, and an edge against other competitors for VCs.
 

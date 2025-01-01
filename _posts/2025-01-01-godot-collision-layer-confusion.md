@@ -2,7 +2,10 @@
 title: Godot Collision Layer Confusion
 description: "My personal experience grappling with Godot 4's collision layers and masks"
 date: 2025-01-01T12:57:14.547Z
-preview: ""
+preview: "public/assets/lib/godot_engine.png"
+image:
+  path: public/assets/lib/godot_engine.png
+  alt: The logo of the Godot Game Engine
 tags: []
 categories: [godot engine]
 math: true

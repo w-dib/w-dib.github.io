@@ -3,6 +3,9 @@ title: "Raising your seed round: why size doesn't matter"
 description: ""
 date: 2022-03-16T14:48:59.405Z
 preview: ""
+image:
+  path: https://annarborusa.org/wp-content/uploads/2022/06/Traction-Time-Seed-Fund-1024x614.png
+  alt: source - https://annarborusa.org/wp-content/uploads/2022/06/Traction-Time-Seed-Fund-1024x614.png
 tags: []
 categories:
   - startups
