@@ -13,7 +13,10 @@
       "path": "[[workspace]]/_site/tabs"
     }
   ],
-  "frontMatter.content.publicFolder": "public/assets/lib",
+  "frontMatter.content.publicFolder": {
+    "path": "public/assets/lib",
+    "relative": true
+  },
   "frontMatter.framework.id": "jekyll",
   "frontMatter.git.enabled": true,
   "frontMatter.preview.host": "http://localhost:4000",

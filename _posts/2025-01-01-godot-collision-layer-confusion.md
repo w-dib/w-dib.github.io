@@ -170,3 +170,6 @@ The next time you're banging your head on the keyboard wondering why your collis
 [^footnote]: Each checkbox in the Inspector represents one **bit** in a binary number. That bit’s position corresponds to a power of two. For example, if you check “Layer 3,” under the hood you’re flipping the bit for $2^{3-1} = 4$. Checking “Layer 1” flips $2^{1-1} = 1$, and so forth. This is how Godot tracks multiple layers in a single integer—each layer is just one more bit in the binary representation.
 
 
+Adding a test image here:
+
+![](../public/assets/lib/Godot%20collisions.png)
