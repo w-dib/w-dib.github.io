@@ -98,7 +98,8 @@ Because Godot can have up to 32 collision layers, using a single integer bitmask
    - The everyday integers we use, e.g. `13`, `42`, `2025`.  
    - Under the hood, this decimal is still the same bitmask. It’s just a different notation.
 
-Each checkbox in the Inspector corresponds to a **power of two** in code[^footnote]. If you want to enable "Layer 3," you're actually enabling the bit that stands for 2^(3-1) = 4. Meanwhile, "Layer 1" is 2^(1-1) = 1, "Layer 2" is 2^(2-1) = 2, etc.
+Each checkbox in the Inspector corresponds to a **power of two** in code[^footnote]. If you want to enable "Layer 3," you're actually enabling the bit that stands for $2^{3-1} = 4$. Meanwhile, "Layer 1" is $2^{1-1} = 1$, "Layer 2" is $2^{2-1} = 2$, etc.
+
 
 In decimal terms:
 
