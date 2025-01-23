@@ -3,6 +3,9 @@ title: Making sense of binary
 description: ""
 date: 2025-01-23T19:46:12.163Z
 preview: ""
+image:
+  path: public/assets/lib/binary_system.png
+  alt: A screenshot from a Khan Academy class on binary interpretation 
 tags: []
 categories: [godot engine]
 math: true
@@ -11,8 +14,6 @@ math: true
 Growing up, I never thought I'd be the type of person to gush over 1's and 0's. I always assumed that numbers were the dull sidekicks to more creative pursuits. I was busy writing short stories about ancient gods in dusty corners of my home. But ironically, these short stories were stored on digital hard drives—under the hood, every word and punctuation was represented in binary. It took me far too long to realize just how magical that is.
 
 Binary has a sneaky way of showing up in every piece of technology we use. Godot 4 is no exception. Not only do we have magical scene trees, signals, and animations, but beneath the hood, we still rely on the simplest building blocks in computing: on/off signals, otherwise known as bits.
-
----
 
 ## Why Binary is Everywhere
 
@@ -46,20 +47,6 @@ So if you see a weird number like 512 or 1024 in computing, it’s likely becaus
 $$1024 = 2^{10}$$.
 
 It's the reason so much in computers looks like a suspiciously round number (in binary), but not in decimal. 
-
----
-
-## Binary in Godot 4: The Collision Masks Example
-
-I've been tinkering heavily with [Godot 4](https://godotengine.org/) lately, and found myself lost in collision layers and masks. If you've ever used collision layers in Godot 4, you've definitely seen something like **Layer 1** is represented by the decimal value `1`, **Layer 2** by `2`, **Layer 3** by `4`, etc. It looks like pure madness at first, but it's actually just binary:
-
-- Layer 1 = \\( 2^{1-1} = 2^{0} = 1 \\).
-- Layer 2 = \\( 2^{2-1} = 2^{1} = 2 \\).
-- Layer 3 = \\( 2^{3-1} = 2^{2} = 4 \\).
-- Layer 4 = \\( 2^{3} = 8 \\).
-- ...and so on.
-
-This matters a lot when you’re raycasting or deciding which layers to detect. Let's say you want to detect layers 1 and 3 at once. Using decimal, that becomes \\(1 + 4 = 5\\). In binary, that's \\(0b0101\\). In hex, \\(0x5\\). Godot doesn't care which format you use internally; it all compiles to the same bitmask. But it certainly confused me the first time I typed in a collision mask of `3` in the code and it only detected layer 2. I soon realized `3` in decimal is `0b11` in binary, which flips on the bits for layers 1 and 2, not layers 1 and 3. Oops!
 
 ## Why You Should Care
 
