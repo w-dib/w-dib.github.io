@@ -22,19 +22,19 @@ Because it's simpler for hardware engineers to detect only two stable voltages�
 
 Binary underpins all digital computing: these two electrical states—on/off, high/low—are all the hardware needs to create the building blocks of modern computing. Once you understand that hardware likes this simplicity, it becomes clearer why we represent data in bits and bitmasks, and why we keep bumping into $$2^n$$ patterns in everything from memory addresses to collision layers in Godot. Understanding binary is like learning the secret handshake of all modern computing. 
 
-### **Quick Math: Powers of Two**
+## **Quick Math: Powers of Two**
 
 A bit can be 0 or 1. With one bit, you have $2^1 = 2$ possibilities. With two bits, $2^2 = 4$ possibilities. 
 
 To see where the powers come from, it helps to imagine all **possible combinations** of bits:
 
-- **One bit** (0 or 1) clearly has \(2\) possibilities because it can be either **0** or **1**. 
-- **Two bits** can be **00**, **01**, **10**, or **11**—that’s \(4\) possible patterns: 
+- **One bit** (0 or 1) clearly has $$2$$ possibilities because it can be either **0** or **1**. In other words, $$2 \text { possibilities} = 2^\text{1 bit} = 2.$$
+- **Two bits** can be **00**, **01**, **10**, or **11**—that’s $$4$$ possible patterns: 
   $$2 \times 2 = 2^2 = 4.$$
-- **Three bits** can be **000**, **001**, **010**, **011**, **100**, **101**, **110**, or **111**—which is \(8\) possible patterns:
+- **Three bits** can be **000**, **001**, **010**, **011**, **100**, **101**, **110**, or **111**—which is $$8$$ possible patterns:
   $$2 \times 2 \times 2 = 2^3 = 8.$$
 
-Generalizing, if you have \(n\) bits, then each new bit doubles the number of possible patterns. That multiplication of 2 repeated \(n\) times is \(2^n\). So the total number of unique ways to flip those \(n\) bits **on or off** is:
+Generalizing, if you have \(n\) bits, then each new bit doubles the number of possible patterns. That multiplication of 2 repeated $$n$$ times is $$2^n$$. So the total number of unique ways to flip those \(n\) bits **on or off** is:
 $$2^n.$$
 
 Keep going, and with $n$ bits you have:
