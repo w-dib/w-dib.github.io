@@ -14,11 +14,6 @@ Previously, I founded:
 - [Addenda (acquired by XA Motors)](https://addenda.tech): a blockchain B2B InsurTech startup.  
 - Hala Insurance (shut down and returned funds): a B2C InsurTech startup.
 
-Previously, I founded:
-- [Callmi (Sold to BRINC)](https://callmi.co): book MENA's most in-demand startup experts over a 1:1 video call. 
-- [Addenda (Sold to XA Motors)](https://addenda.tech): blockchain B2B InsurTech startup.
-- Hala Insurance (Shut down and returned funds), was a B2C InsurTech startup.
-
 ---
 
 ## Gamedev 🎮
