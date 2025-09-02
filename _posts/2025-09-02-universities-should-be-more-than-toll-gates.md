@@ -27,7 +27,7 @@ This university, mind you, is allegedly one of the best in Jordan. I had some of
 
 A typical Jordanian engineering student needs to serve an engineering sentence of 5 years, compared to 4 years of education in the US or 3 in England. Jordanian universities follow an archaic credit-hour system where at least a semester’s worth of useless subjects are crammed into your schedule. For example, everyone I know had to study "Military Science," a semester-long 3-credit course with very little use outside of esoteric trivia about army hierarchy. 
 
-If you're assuming that I'm implying that the system trades your time and money for empty credit hours, then you can collect your prize at the door. 21% of Jordanians are unemployed. That's far above the global average of 4.9%. Ask yourself: does the higher cost and delayed entry into the workforce really help?
+If you're assuming that I'm implying that the system trades your time and money for empty credit hours, then you can collect your prize at the door. 21% of Jordanians are unemployed. That's far above the global average of 4.9%. I'm sure the Ministry of Higher Education knows exactly what they're doing, but from where I'm standing it looks like the plan is to keep people out of the workforce for as long as possible.
 
 This is not to say that this specific university was not worth students' money. Many of my peers secured jobs in Germany right after graduating. These people did their time and earned their credentials. The question remains, though: is this because of what they **learned** at university or because of being part of the German-Jordanian labor conveyor belt?
 
