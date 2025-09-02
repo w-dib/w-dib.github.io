@@ -8,7 +8,7 @@ image:
   alt: University Credential Conveyor Belt
 tags: []
 categories:
-  - thoughts
+  [thoughts]
 type: default
 slug: universities-should-be-more-than-toll-gates
 ---
@@ -17,9 +17,9 @@ If you studied university in many parts of the Middle East, try asking yourself 
 
 A few days ago, I was lazily browsing Hacker News when I came across a [provocative](https://firstthings.com/math-is-erotic/#:~:text=The%20function%20universities%20have%20long%20played%20is%20less%20one%20of%20educating%20than%20of%20credentialing.) blog post titled "Math is Erotic." Without going into too much detail about the contents of the post itself — which, for reference, has very little erotica — the part that really caught my attention was below:
 
-> The function universities have l  ong played is less one of educating than of credentialing.
+> The function universities have long played is less one of educating than of credentialing.
 
-I studied Environmental Engineering in Jordan, and more than 10 years after graduating, the above resonates on a profound level with me. I assume a lot of people from the Arab world and South Asia would relate to this. 
+I studied Environmental Engineering in Jordan, and more than 10 years after graduating, the above resonates on a profound level with me. I assume a lot of people from the Arab world and South Asia would relate to this, too. 
 
 At the risk of sounding like yet another entrepreneur talking smack about university education, hear me out: the German Jordanian University, where I studied, was a conveyor belt clattering along slowly to secure jobs abroad for young Jordanians. As the name implies, engineering students were meant to spend 4 years in Jordan, and another mandatory year in Germany. It started as a joint project in 2005 between the governments of Jordan and Germany.   
 
@@ -45,6 +45,6 @@ I recently started to see learning a bit differently. I don't need to feel guilt
 
 Forgetting is fine. Losing track is fine. Nobody beats themselves up because they can't recite scripts and scenes of their favorite movie or video game, so why should I remember exactly how [layers work in Godot](https://www.waliddib.com/posts/godot-collision-layer-confusion/)? 
 
-What matters is that I keep finding new things to chase, new rabbit holes to fall into. The act of learning itself is such a rush, even if I find another shinier subject halfway through. I now have a new plan: acquire the financial freedom for my little family needs to design my own syllabus and spend the rest of my life learning on my own terms.
+What matters is that I keep finding new things to chase, new rabbit holes to fall into. The act of learning itself is such a rush, even if I find another shinier subject halfway through. I now have a new plan: acquire the financial freedom my little family needs to design my own syllabus and spend the rest of my life learning on my own terms.
 
 [^footnote]: To be fair, I only worked as an engineer for a bit more than a year between 2014 and 2016.
