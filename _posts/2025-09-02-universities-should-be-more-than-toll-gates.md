@@ -5,7 +5,7 @@ date: 2025-09-02T10:46:51.458Z
 preview: "public/assets/lib/universityconveyorbelt.png"
 image:
   path: public/assets/lib/universityconveyorbelt.png
-  alt: University Credential Conveyor Belt
+  alt: University Credential Toll Gate
 tags: []
 categories:
   [thoughts]
