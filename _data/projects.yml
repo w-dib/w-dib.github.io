@@ -1,0 +1,53 @@
+# Things Walid has worked on, rendered in _tabs/about.md.
+# status: live | acquired | shutdown  (controls the colored pill)
+# Order within each group is most-recent first.
+
+companies:
+  - name: 10Demo
+    url: https://10demo.com
+    status: live
+    label: Live
+    blurb: >-
+      An AI SDR that hops on your sales calls, shares its screen, and answers
+      prospects' questions live — putting product demos on autopilot.
+
+  - name: Callmi
+    url: https://callmi.co
+    status: acquired
+    label: Acquired · BRINC
+    blurb: Book MENA's most in-demand startup experts over a 1:1 video call.
+
+  - name: Addenda
+    url: https://addenda.tech
+    status: acquired
+    label: Acquired · XA Motors
+    blurb: A blockchain B2B InsurTech startup.
+
+  - name: Hala Insurance
+    url: https://mena.entrepreneur.com/entrepreneurs/we-got-funded-abu-dhabi-based-insurtech-startup-hala/382570
+    status: shutdown
+    label: Shut down
+    blurb: A B2C InsurTech startup. Wound down and returned funds to investors.
+
+  - name: Better
+    url: https://itsbetter.app
+    status: shutdown
+    label: Shut down
+    blurb: >-
+      A wellness brand helping people sleep deeper, relax more, and feel better
+      at home through simple bath and bed rituals.
+
+side_projects:
+  - name: Jaib
+    url: https://jaib.app
+    status: live
+    label: Live
+    blurb: >-
+      An open-source, self-hostable read-it-later app I vibe-coded after
+      Pocket shut down.
+
+  - name: Gamedev
+    url: https://godotengine.org
+    status: live
+    label: For fun
+    blurb: Learning to build video games in my spare time with Godot.

@@ -1,0 +1,200 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* ==========================================================================
+   Custom overrides — minimalist founder look
+   Sidebar / burger menu colors, nav typography, and the About "CV" list.
+   ========================================================================== */
+
+/* ---- Neutral sidebar palette (replaces Chirpy's bluish defaults) -------- */
+
+@mixin sidebar-light {
+  --sidebar-bg: #ffffff;
+  --sidebar-border-color: #ececec;
+  --site-title-color: #1d1d1d;
+  --site-subtitle-color: #6b6b6b;
+  --sidebar-muted-color: #6b6b6b;
+  --sidebar-active-color: #111111;
+  --sidebar-hover-bg: rgb(0 0 0 / 5%);
+  --sidebar-btn-bg: #ffffff;
+  --sidebar-btn-color: #9a9a9a;
+  --avatar-border-color: #ececec;
+}
+
+@mixin sidebar-dark {
+  --sidebar-bg: #161616;
+  --sidebar-border-color: #262626;
+  --site-title-color: #f4f4f5;
+  --site-subtitle-color: #8d8d8d;
+  --sidebar-muted-color: #8d8d8d;
+  --sidebar-active-color: #ffffff;
+  --sidebar-hover-bg: rgb(255 255 255 / 6%);
+  --sidebar-btn-bg: #222226;
+  --sidebar-btn-color: #8a8a8a;
+  --avatar-border-color: #333338;
+}
+
+/* Mirror Chirpy's own light/dark resolution so toggle + system both work. */
+html {
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      @include sidebar-light;
+    }
+
+    &[data-mode='dark'] {
+      @include sidebar-dark;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      @include sidebar-dark;
+    }
+
+    &[data-mode='light'] {
+      @include sidebar-light;
+    }
+  }
+}
+
+/* ---- Sidebar / nav typography: tighter, quieter, more "YC" ------------- */
+
+#sidebar {
+  .site-title {
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+
+  .site-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.1px;
+  }
+
+  ul li.nav-item {
+    opacity: 1;
+
+    a.nav-link {
+      border-radius: 0.5rem;
+
+      span {
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        color: var(--sidebar-muted-color);
+      }
+
+      &:hover span {
+        color: var(--sidebar-active-color);
+      }
+    }
+
+    &.active .nav-link span {
+      color: var(--sidebar-active-color);
+    }
+  }
+}
+
+/* ==========================================================================
+   About page — "things I've worked on" list
+   ========================================================================== */
+
+.cv-heading {
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-muted-color);
+  margin: 2.75rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.cv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cv-item-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.cv-name {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-color) !important;
+  text-decoration: none;
+}
+
+.cv-name:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cv-blurb {
+  margin: 0.3rem 0 0;
+  color: var(--text-muted-color);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 42rem;
+}
+
+/* Status pills */
+.cv-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.5;
+  transform: translateY(-1px);
+}
+
+.cv-pill--live {
+  color: #15803d;
+  background: rgb(34 197 94 / 13%);
+}
+
+.cv-pill--acquired {
+  color: #1d4ed8;
+  background: rgb(59 130 246 / 13%);
+}
+
+.cv-pill--shutdown {
+  color: #6b7280;
+  background: rgb(107 114 128 / 14%);
+}
+
+html[data-mode='dark'] {
+  .cv-pill--live {
+    color: #4ade80;
+    background: rgb(34 197 94 / 16%);
+  }
+
+  .cv-pill--acquired {
+    color: #93b4fc;
+    background: rgb(59 130 246 / 18%);
+  }
+
+  .cv-pill--shutdown {
+    color: #a1a1aa;
+    background: rgb(161 161 170 / 15%);
+  }
+}
