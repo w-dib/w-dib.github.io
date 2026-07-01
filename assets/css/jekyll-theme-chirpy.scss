@@ -9,114 +9,593 @@
 ';
 
 /* ==========================================================================
-   Custom overrides — minimalist founder look
-   Sidebar / burger menu colors, nav typography, and the About "CV" list.
+   1-BIT THEME — classic Macintosh System-era look.
+   Two colors only. Light mode = black on white; dark mode = inverted.
+   Everything is driven by --ob-fg / --ob-bg so the mode toggle keeps working.
+   Fonts are loaded in _includes/metadata-hook.html (Silkscreen + Pixelify Sans).
    ========================================================================== */
 
-/* ---- Neutral sidebar palette (replaces Chirpy's bluish defaults) -------- */
+/* ---- Palette: map every Chirpy variable to the two colors ---------------- */
 
-@mixin sidebar-light {
-  --sidebar-bg: #ffffff;
-  --sidebar-border-color: #ececec;
-  --site-title-color: #1d1d1d;
-  --site-subtitle-color: #6b6b6b;
-  --sidebar-muted-color: #6b6b6b;
-  --sidebar-active-color: #111111;
-  --sidebar-hover-bg: rgb(0 0 0 / 5%);
-  --sidebar-btn-bg: #ffffff;
-  --sidebar-btn-color: #9a9a9a;
-  --avatar-border-color: #ececec;
+@mixin onebit($fg, $bg) {
+  --ob-fg: #{$fg};
+  --ob-bg: #{$bg};
+
+  /* framework */
+  --main-bg: var(--ob-bg);
+  --mask-bg: var(--ob-fg);
+  --main-border-color: var(--ob-fg);
+
+  /* text */
+  --text-color: var(--ob-fg);
+  --text-muted-color: var(--ob-fg);
+  --text-muted-highlight-color: var(--ob-fg);
+  --heading-color: var(--ob-fg);
+  --label-color: var(--ob-fg);
+  --blockquote-border-color: var(--ob-fg);
+  --blockquote-text-color: var(--ob-fg);
+  --link-color: var(--ob-fg);
+  --link-underline-color: var(--ob-fg);
+
+  /* buttons / misc */
+  --button-bg: var(--ob-bg);
+  --btn-border-color: var(--ob-fg);
+  --btn-backtotop-color: var(--ob-fg);
+  --btn-backtotop-border-color: var(--ob-fg);
+  --btn-paginator-hover-color: var(--ob-fg);
+  --btn-patinator-text-color: var(--ob-fg);
+  --btn-share-color: var(--ob-fg);
+  --btn-share-hover-color: var(--ob-fg);
+  --checkbox-color: var(--ob-fg);
+  --checkbox-checked-color: var(--ob-fg);
+  --img-bg: var(--ob-bg);
+  --shimmer-bg: var(--ob-bg);
+  --footnote-target-bg: var(--ob-bg);
+
+  /* sidebar */
+  --site-title-color: var(--ob-fg);
+  --site-subtitle-color: var(--ob-fg);
+  --sidebar-bg: var(--ob-bg);
+  --sidebar-border-color: var(--ob-fg);
+  --sidebar-muted-color: var(--ob-fg);
+  --sidebar-active-color: var(--ob-fg);
+  --sidebar-hover-bg: transparent;
+  --sidebar-btn-bg: var(--ob-bg);
+  --sidebar-btn-color: var(--ob-fg);
+  --avatar-border-color: var(--ob-fg);
+
+  /* topbar / search */
+  --topbar-bg: var(--ob-bg);
+  --topbar-text-color: var(--ob-fg);
+  --search-border-color: var(--ob-fg);
+  --search-icon-color: var(--ob-fg);
+  --input-focus-border-color: var(--ob-fg);
+  --search-tag-bg: var(--ob-bg);
+
+  /* home cards */
+  --card-bg: var(--ob-bg);
+  --card-hover-bg: var(--ob-bg);
+  --card-shadow: var(--ob-fg);
+  --post-list-text-color: var(--ob-fg);
+
+  /* menus / popups */
+  --menu-bg: var(--ob-bg);
+  --menu-border-color: var(--ob-fg);
+  --menu-shadow-color: var(--ob-fg);
+  --menu-active-color: var(--ob-fg);
+  --menu-highlight-bg: var(--ob-fg);
+
+  /* categories / tags / archives */
+  --categories-border: var(--ob-fg);
+  --categories-hover-bg: var(--ob-bg);
+  --categories-icon-hover-color: var(--ob-fg);
+  --tag-border: var(--ob-fg);
+  --tag-shadow: var(--ob-fg);
+  --tag-hover: var(--ob-bg);
+  --dash-color: var(--ob-fg);
+  --timeline-color: var(--ob-fg);
+  --timeline-node-bg: var(--ob-fg);
+  --timeline-year-dot-color: var(--ob-fg);
+
+  /* code */
+  --code-color: var(--ob-fg);
+  --code-header-text-color: var(--ob-fg);
+  --code-header-muted-color: var(--ob-fg);
+  --code-header-icon-color: var(--ob-fg);
+  --highlight-bg-color: var(--ob-bg);
+  --highlight-lineno-color: var(--ob-fg);
+  --highlighter-rouge-color: var(--ob-fg);
+  --inline-code-bg: var(--ob-bg);
+  --language-border-color: var(--ob-fg);
+  --clipboard-checked-color: var(--ob-fg);
+  --kbd-bg-color: var(--ob-bg);
+  --kbd-text-color: var(--ob-fg);
+  --kbd-wrap-color: var(--ob-fg);
+
+  /* tables / prompts / toc */
+  --tb-border-color: var(--ob-fg);
+  --tb-odd-bg: var(--ob-bg);
+  --prompt-text-color: var(--ob-fg);
+  --prompt-tip-bg: var(--ob-bg);
+  --prompt-tip-icon-color: var(--ob-fg);
+  --prompt-info-bg: var(--ob-bg);
+  --prompt-info-icon-color: var(--ob-fg);
+  --prompt-warning-bg: var(--ob-bg);
+  --prompt-warning-icon-color: var(--ob-fg);
+  --prompt-danger-bg: var(--ob-bg);
+  --prompt-danger-icon-color: var(--ob-fg);
+  --toc-highlight: var(--ob-fg);
+  --toc-popup-border-color: var(--ob-fg);
 }
 
-@mixin sidebar-dark {
-  --sidebar-bg: #161616;
-  --sidebar-border-color: #262626;
-  --site-title-color: #f4f4f5;
-  --site-subtitle-color: #8d8d8d;
-  --sidebar-muted-color: #8d8d8d;
-  --sidebar-active-color: #ffffff;
-  --sidebar-hover-bg: rgb(255 255 255 / 6%);
-  --sidebar-btn-bg: #222226;
-  --sidebar-btn-color: #8a8a8a;
-  --avatar-border-color: #333338;
-}
-
-/* Mirror Chirpy's own light/dark resolution so toggle + system both work. */
+/* Mirror Chirpy's light/dark resolution so the toggle + system pref work. */
 html {
   @media (prefers-color-scheme: light) {
     &:not([data-mode]),
     &[data-mode='light'] {
-      @include sidebar-light;
+      @include onebit(#000, #fff);
     }
 
     &[data-mode='dark'] {
-      @include sidebar-dark;
+      @include onebit(#fff, #000);
     }
   }
 
   @media (prefers-color-scheme: dark) {
     &:not([data-mode]),
     &[data-mode='dark'] {
-      @include sidebar-dark;
+      @include onebit(#fff, #000);
     }
 
     &[data-mode='light'] {
-      @include sidebar-light;
+      @include onebit(#000, #fff);
     }
   }
 }
 
-/* ---- Sidebar / nav typography: tighter, quieter, more "YC" ------------- */
+/* ---- Reusable pieces ------------------------------------------------------ */
+
+/* the classic Mac 50% dither "desktop" */
+%ob-desktop {
+  background: repeating-conic-gradient(
+      var(--ob-fg) 0% 25%,
+      var(--ob-bg) 0% 50%
+    )
+    0 0 / 4px 4px;
+}
+
+/* a white window pane */
+%ob-window {
+  background: var(--ob-bg);
+  border: 2px solid var(--ob-fg);
+  box-shadow: 4px 4px 0 var(--ob-fg);
+  border-radius: 0;
+}
+
+/* striped Mac title bar behind a centered title */
+%ob-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ob-font-ui);
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1 1 0;
+    min-width: 12px;
+    height: 11px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--ob-fg) 0 1px,
+      transparent 1px 3px
+    );
+  }
+}
+
+/* ---- Typography ----------------------------------------------------------- */
+
+:root {
+  --ob-font-ui: 'Silkscreen', 'Pixelify Sans', monospace;
+  --ob-font-body: 'Pixelify Sans', 'Silkscreen', sans-serif;
+}
+
+body {
+  font-family: var(--ob-font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ob-font-ui);
+  letter-spacing: 0;
+}
+
+.content {
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* code stays in a real monospace font for readability */
+pre,
+code,
+kbd,
+samp {
+  font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+a {
+  text-underline-offset: 2px;
+}
+
+/* kill rounded corners everywhere */
+.card,
+.btn,
+.pagination .page-link,
+.post-tag,
+.categories,
+.card-header,
+img,
+.prompt-tip,
+.prompt-info,
+.prompt-warning,
+.prompt-danger,
+blockquote,
+.highlight,
+div[class^='language-'],
+#back-to-top,
+input,
+.search-bar,
+#search-input {
+  border-radius: 0 !important;
+}
+
+/* ---- Desktop background + main window ------------------------------------ */
+
+body {
+  @extend %ob-desktop;
+}
+
+/* pages & posts render inside one big window */
+main {
+  @extend %ob-window;
+
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem 2rem;
+}
+
+/* …except the home page, where each post card is its own window */
+main:has(#post-list) {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* post & page titles become window title bars */
+main article h1[data-toc-skip]:first-of-type,
+main .dynamic-title {
+  @extend %ob-titlebar;
+
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+/* ---- Home: post cards as windows ------------------------------------------ */
+
+#post-list {
+  .card-wrapper {
+    margin-bottom: 1.75rem;
+  }
+
+  .card {
+    @extend %ob-window;
+
+    &:hover {
+      box-shadow: 6px 6px 0 var(--ob-fg);
+    }
+
+    .card-title {
+      @extend %ob-titlebar;
+
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .card-text.content {
+      font-size: 0.98rem;
+    }
+
+    /* preview thumbnails go monochrome */
+    img {
+      filter: grayscale(1) contrast(1.05);
+    }
+  }
+}
+
+/* pagination as Mac buttons */
+.pagination {
+  gap: 0.35rem;
+
+  .page-link {
+    background: var(--ob-bg);
+    border: 2px solid var(--ob-fg);
+    color: var(--ob-fg);
+    font-family: var(--ob-font-ui);
+
+    &:hover {
+      background: var(--ob-fg);
+      color: var(--ob-bg);
+    }
+  }
+
+  .page-item.active .page-link {
+    background: var(--ob-fg);
+    color: var(--ob-bg);
+  }
+
+  .page-item.disabled .page-link {
+    opacity: 0.35;
+  }
+}
+
+/* ---- Sidebar: the "desktop" with an info window + icon buttons ------------ */
 
 #sidebar {
+  @extend %ob-desktop;
+
+  border-right: 2px solid var(--ob-fg);
+
+  .profile-wrapper {
+    background: var(--ob-bg);
+    border: 2px solid var(--ob-fg);
+    box-shadow: 3px 3px 0 var(--ob-fg);
+    padding: 1.25rem 1rem 1rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    width: auto;
+  }
+
+  #avatar {
+    border-radius: 0;
+    box-shadow: 0 0 0 2px var(--ob-fg);
+    image-rendering: pixelated;
+
+    img:hover {
+      transform: none;
+    }
+  }
+
   .site-title {
-    font-weight: 800;
-    letter-spacing: -0.3px;
+    font-family: var(--ob-font-ui);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0;
   }
 
   .site-subtitle {
+    font-family: var(--ob-font-body);
     font-size: 0.85rem;
-    letter-spacing: 0.1px;
   }
 
   ul li.nav-item {
     opacity: 1;
+    margin-bottom: 0.4rem;
 
     a.nav-link {
-      border-radius: 0.5rem;
+      background: var(--ob-bg);
+      border: 2px solid var(--ob-fg);
+      border-radius: 0;
+      padding-top: 0.45rem;
+      padding-bottom: 0.45rem;
 
       span {
-        font-size: 0.74rem;
-        font-weight: 600;
-        letter-spacing: 0.7px;
-        text-transform: uppercase;
-        color: var(--sidebar-muted-color);
+        font-family: var(--ob-font-ui);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        color: var(--ob-fg);
       }
 
-      &:hover span {
-        color: var(--sidebar-active-color);
+      i {
+        color: var(--ob-fg);
+      }
+
+      /* classic Mac selection: invert on hover/active */
+      &:hover {
+        background: var(--ob-fg);
+
+        span,
+        i {
+          color: var(--ob-bg);
+        }
       }
     }
 
-    &.active .nav-link span {
-      color: var(--sidebar-active-color);
+    &.active .nav-link {
+      background: var(--ob-fg);
+
+      span,
+      i {
+        color: var(--ob-bg);
+      }
+    }
+  }
+
+  .sidebar-bottom {
+    a,
+    #mode-toggle {
+      background: var(--ob-bg);
+      border-radius: 0;
+      color: var(--ob-fg);
+
+      &:not(:focus-visible) {
+        box-shadow: 0 0 0 2px var(--ob-fg);
+      }
+
+      &:hover {
+        background: var(--ob-fg);
+        color: var(--ob-bg);
+
+        i {
+          color: var(--ob-bg);
+        }
+      }
+    }
+
+    .icon-border {
+      background-color: var(--ob-fg);
+    }
+  }
+}
+
+/* ---- Topbar ---------------------------------------------------------------- */
+
+#topbar-wrapper {
+  background: var(--ob-bg);
+  border-bottom: 2px solid var(--ob-fg);
+}
+
+#topbar-title,
+#breadcrumb {
+  font-family: var(--ob-font-ui);
+  font-size: 0.85rem;
+}
+
+search input,
+#search-input {
+  background: var(--ob-bg);
+  border: 2px solid var(--ob-fg);
+  color: var(--ob-fg);
+}
+
+/* ---- Right panel (recently updated / trending tags / TOC) ----------------- */
+
+#panel-wrapper {
+  section,
+  #access-lastmod,
+  #toc-wrapper {
+    background: var(--ob-bg);
+    border: 2px solid var(--ob-fg);
+    box-shadow: 3px 3px 0 var(--ob-fg);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .panel-heading {
+    @extend %ob-titlebar;
+
+    font-size: 0.72rem;
+  }
+
+  .post-tag {
+    border: 1.5px solid var(--ob-fg) !important;
+    color: var(--ob-fg) !important;
+
+    &:hover {
+      background: var(--ob-fg) !important;
+      color: var(--ob-bg) !important;
+    }
+  }
+}
+
+/* ---- Footer ----------------------------------------------------------------- */
+
+#tail-wrapper > footer {
+  background: var(--ob-bg);
+  border: 2px solid var(--ob-fg);
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--ob-font-ui);
+  font-size: 0.7rem;
+}
+
+/* ---- Back-to-top: square Mac button ---------------------------------------- */
+
+#back-to-top {
+  background: var(--ob-bg);
+  border: 2px solid var(--ob-fg);
+  box-shadow: 3px 3px 0 var(--ob-fg);
+
+  &:hover {
+    background: var(--ob-fg);
+    color: var(--ob-bg);
+  }
+}
+
+/* ---- Post content bits ------------------------------------------------------ */
+
+/* monochrome images (remove this block to keep post images in color) */
+main article .content img {
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* code blocks: plain 1-bit boxes, monochrome tokens */
+.highlight,
+div[class^='language-'] {
+  border: 2px solid var(--ob-fg);
+}
+
+.highlight *,
+div[class^='language-'] .rouge-code * {
+  color: var(--ob-fg) !important;
+  background: transparent !important;
+}
+
+code.highlighter-rouge {
+  border: 1px solid var(--ob-fg);
+  padding: 0 0.3rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--ob-fg);
+
+  &[class^='prompt-'] {
+    border: 2px solid var(--ob-fg);
+    border-left-width: 4px;
+  }
+}
+
+table {
+  border: 2px solid var(--ob-fg);
+
+  th,
+  td {
+    border: 1px solid var(--ob-fg) !important;
+  }
+}
+
+/* share buttons + post tags */
+.post-tail-wrapper {
+  .post-tag {
+    border: 1.5px solid var(--ob-fg) !important;
+
+    &:hover {
+      background: var(--ob-fg) !important;
+      color: var(--ob-bg) !important;
     }
   }
 }
 
 /* ==========================================================================
-   About page — "things I've worked on" list
+   About page — "things I've worked on" list (1-bit restyle)
    ========================================================================== */
 
 .cv-heading {
-  font-size: 0.78rem !important;
+  @extend %ob-titlebar;
+
+  font-size: 0.8rem !important;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--text-muted-color);
-  margin: 2.75rem 0 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--main-border-color);
+  color: var(--ob-fg);
+  margin: 2.5rem 0 1.25rem;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .cv-list {
@@ -134,67 +613,38 @@ html {
 }
 
 .cv-name {
-  font-size: 1.08rem;
+  font-family: var(--ob-font-ui);
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--text-color) !important;
-  text-decoration: none;
-}
-
-.cv-name:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: var(--ob-fg) !important;
 }
 
 .cv-blurb {
   margin: 0.3rem 0 0;
-  color: var(--text-muted-color);
-  font-size: 0.95rem;
+  color: var(--ob-fg);
+  font-size: 0.98rem;
   line-height: 1.55;
   max-width: 42rem;
 }
 
-/* Status pills */
+/* pills: Live = inverted (solid), everything else = outline */
 .cv-pill {
   display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.4px;
+  font-family: var(--ob-font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
   text-transform: uppercase;
-  padding: 0.12rem 0.55rem;
-  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  border: 1.5px solid var(--ob-fg);
+  border-radius: 0;
   white-space: nowrap;
-  line-height: 1.5;
-  transform: translateY(-1px);
+  line-height: 1.6;
+  color: var(--ob-fg);
+  background: var(--ob-bg);
+  transform: translateY(-2px);
 }
 
 .cv-pill--live {
-  color: #15803d;
-  background: rgb(34 197 94 / 13%);
-}
-
-.cv-pill--acquired {
-  color: #1d4ed8;
-  background: rgb(59 130 246 / 13%);
-}
-
-.cv-pill--shutdown {
-  color: #6b7280;
-  background: rgb(107 114 128 / 14%);
-}
-
-html[data-mode='dark'] {
-  .cv-pill--live {
-    color: #4ade80;
-    background: rgb(34 197 94 / 16%);
-  }
-
-  .cv-pill--acquired {
-    color: #93b4fc;
-    background: rgb(59 130 246 / 18%);
-  }
-
-  .cv-pill--shutdown {
-    color: #a1a1aa;
-    background: rgb(161 161 170 / 15%);
-  }
+  color: var(--ob-bg);
+  background: var(--ob-fg);
 }
