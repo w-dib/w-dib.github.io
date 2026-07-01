@@ -7,7 +7,7 @@ title: Hey 👋
 
 I'm Walid Dib — an entrepreneur and operator focused on building products from zero to revenue, with an emphasis on speed, leverage, and clear thinking.
 
-I'm currently building [**10Demo**](https://10demo.com), an AI SDR that puts product demos on autopilot. Below is the rest of what I've worked on.
+Here's what I've worked on over the years.
 
 <h2 class="cv-heading">Companies</h2>
 <div class="cv-list">

@@ -3,14 +3,6 @@
 # Order within each group is most-recent first.
 
 companies:
-  - name: 10Demo
-    url: https://10demo.com
-    status: live
-    label: Live
-    blurb: >-
-      An AI SDR that hops on your sales calls, shares its screen, and answers
-      prospects' questions live — putting product demos on autopilot.
-
   - name: Callmi
     url: https://callmi.co
     status: acquired
