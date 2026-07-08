@@ -38,6 +38,14 @@ side_projects:
       An open-source, self-hostable read-it-later app I vibe-coded after
       Pocket shut down.
 
+  - name: Lesen
+    url: https://lesen.jaib.app
+    status: live
+    label: Live
+    blurb: >-
+      A mobile-first reading app for learning languages — tap any word to look
+      it up, track vocabulary, and review it with AI-generated exercises.
+
   - name: Gamedev
     url: https://godotengine.org
     status: live
