@@ -1,0 +1,40 @@
+<!--
+  Embed a playable Godot HTML5 export in a post.
+
+  Setup (once per game):
+    1. In Godot: Project > Export > Web. Name the output file `index.html`.
+       IMPORTANT: disable "Thread Support" in the export options (Godot 4.3+)
+       so the game runs on hosts that can't set COOP/COEP headers.
+    2. Drop the whole export (index.html, .js, .pck, .wasm, ...) into:
+       assets/games/<game-id>/
+
+  Usage in a post (portrait is the default, 9:16):
+    {% raw %}{% include game.html id="my-game" %}{% endraw %}
+
+  Optional parameters:
+    w / h   — aspect ratio numbers. Landscape: w=16 h=9. Square: w=1 h=1.
+    title   — text on the play button (default "Tap to play").
+-->
+
+{% assign game_src = '/assets/games/' | append: include.id | append: '/index.html' | relative_url %}
+
+<div
+  class="game-embed"
+  style="--game-w: {{ include.w | default: 9 }}; --game-h: {{ include.h | default: 16 }}"
+>
+  <button
+    type="button"
+    class="game-embed__start"
+    data-src="{{ game_src }}"
+    onclick="var w = this.parentElement, f = document.createElement('iframe');
+             f.src = this.dataset.src;
+             f.allow = 'fullscreen; gamepad; autoplay';
+             f.setAttribute('allowfullscreen', '');
+             f.setAttribute('loading', 'lazy');
+             f.title = '{{ include.title | default: 'Playable game' | escape }}';
+             w.replaceChild(f, this);"
+  >
+    <span class="game-embed__icon">▶</span>
+    <span>{{ include.title | default: 'Tap to play' }}</span>
+  </button>
+</div>

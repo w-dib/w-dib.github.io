@@ -5,16 +5,32 @@ order: 4
 title: Hey 👋
 ---
 
-I'm Walid, the founder of [Better](https://itsbetter.app)—a self-care startup reimagining how consumer goods are built in the Middle East. We're building MENA’s first AI-powered, self-driving CPG brand, launching high-quality, ritual-driven wellness products validated by real demand *before* we ever touch inventory.
+I'm Walid Dib — an entrepreneur and operator focused on building products from zero to revenue, with an emphasis on speed, leverage, and clear thinking.
 
-Think **silk pillowcases**, **aromatherapy shower heads**, **caffeine shampoos**, **biotin gummies**, and more. Our goal is to launch 1,000 hero products by 2030.
+Here's what I've worked on over the years.
 
-Previously, I founded:
-- [Callmi (acquired by BRINC)](https://callmi.co): a platform to book MENA's top startup experts for 1:1 video calls.  
-- [Addenda (acquired by XA Motors)](https://addenda.tech): a blockchain B2B InsurTech startup.  
-- Hala Insurance (shut down and returned funds): a B2C InsurTech startup.
+<h2 class="cv-heading">Companies</h2>
+<div class="cv-list">
+{% for item in site.data.projects.companies %}
+  <div class="cv-item">
+    <div class="cv-item-head">
+      <a class="cv-name" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+      <span class="cv-pill cv-pill--{{ item.status }}">{{ item.label }}</span>
+    </div>
+    <p class="cv-blurb">{{ item.blurb }}</p>
+  </div>
+{% endfor %}
+</div>
 
----
-
-## Gamedev 🎮
-I spend my free time learning to how code video games for fun using [Godot](https://godotengine.org), an open-source engine.
+<h2 class="cv-heading">Side projects</h2>
+<div class="cv-list">
+{% for item in site.data.projects.side_projects %}
+  <div class="cv-item">
+    <div class="cv-item-head">
+      <a class="cv-name" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+      <span class="cv-pill cv-pill--{{ item.status }}">{{ item.label }}</span>
+    </div>
+    <p class="cv-blurb">{{ item.blurb }}</p>
+  </div>
+{% endfor %}
+</div>
