@@ -206,6 +206,7 @@ html[data-mode='dark'] {
    ========================================================================== */
 
 .game-embed {
+  position: relative;
   aspect-ratio: calc(var(--game-w, 9) / var(--game-h, 16));
   width: min(100%, calc(75vh * var(--game-w, 9) / var(--game-h, 16)));
   margin: 1.5rem auto;
@@ -219,6 +220,61 @@ html[data-mode='dark'] {
     width: 100%;
     height: 100%;
     border: 0;
+  }
+
+  /* when the wrapper itself is fullscreened, fill the screen */
+  &:fullscreen {
+    width: 100%;
+    aspect-ratio: auto;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+/* itch.io-style overlay fullscreen toggle (bottom-right, low opacity) */
+.game-embed__fs {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: rgb(0 0 0 / 45%);
+  color: rgb(255 255 255 / 90%);
+  font-size: 1rem;
+  opacity: 0.35;
+  transition: opacity 0.15s;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  .fa-compress {
+    display: none;
+  }
+}
+
+/* only shown once the game is running (and fullscreen is supported) */
+.game-embed--playing .game-embed__fs {
+  display: flex;
+}
+
+/* swap the icon while fullscreen */
+.game-embed:fullscreen {
+  .fa-expand {
+    display: none;
+  }
+
+  .fa-compress {
+    display: inline-block;
   }
 }
 

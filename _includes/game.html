@@ -32,9 +32,24 @@
              f.setAttribute('allowfullscreen', '');
              f.setAttribute('loading', 'lazy');
              f.title = '{{ include.title | default: 'Playable game' | escape }}';
+             if (document.fullscreenEnabled) { w.classList.add('game-embed--playing'); }
              w.replaceChild(f, this);"
   >
     <span class="game-embed__icon">▶</span>
     <span>{{ include.title | default: 'Tap to play' }}</span>
+  </button>
+
+  <!-- itch.io-style overlay fullscreen toggle; revealed once the game starts -->
+  <button
+    type="button"
+    class="game-embed__fs"
+    title="Toggle fullscreen"
+    aria-label="Toggle fullscreen"
+    onclick="var w = this.closest('.game-embed');
+             if (document.fullscreenElement) { document.exitFullscreen(); }
+             else if (w.requestFullscreen) { w.requestFullscreen(); }"
+  >
+    <i class="fas fa-expand"></i>
+    <i class="fas fa-compress"></i>
   </button>
 </div>
