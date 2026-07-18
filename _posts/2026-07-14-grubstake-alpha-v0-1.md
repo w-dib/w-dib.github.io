@@ -4,7 +4,7 @@ description: ""
 date: 2026-07-14T12:00:00.000Z
 preview: ""
 image:
-  path: public/assets/lib/grubstake_wide.gif
+  path: public/assets/lib/grubstake_wide.webp
   alt: An animated clip of Grubstake, a pixel-art roguelite shop game
 categories: [godot engine]
 ---
