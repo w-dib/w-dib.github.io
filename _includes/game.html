@@ -20,20 +20,15 @@
 
 <div
   class="game-embed"
+  data-game-width="{{ include.w | default: 9 }}"
+  data-game-height="{{ include.h | default: 16 }}"
   style="--game-w: {{ include.w | default: 9 }}; --game-h: {{ include.h | default: 16 }}"
 >
   <button
     type="button"
     class="game-embed__start"
     data-src="{{ game_src }}"
-    onclick="var w = this.parentElement, f = document.createElement('iframe');
-             f.src = this.dataset.src;
-             f.allow = 'fullscreen; gamepad; autoplay';
-             f.setAttribute('allowfullscreen', '');
-             f.setAttribute('loading', 'lazy');
-             f.title = '{{ include.title | default: 'Playable game' | escape }}';
-             if (document.fullscreenEnabled) { w.classList.add('game-embed--playing'); }
-             w.replaceChild(f, this);"
+    data-title="{{ include.title | default: 'Playable game' | escape }}"
   >
     <span class="game-embed__icon">▶</span>
     <span>{{ include.title | default: 'Tap to play' }}</span>
@@ -45,11 +40,55 @@
     class="game-embed__fs"
     title="Toggle fullscreen"
     aria-label="Toggle fullscreen"
-    onclick="var w = this.closest('.game-embed');
-             if (document.fullscreenElement) { document.exitFullscreen(); }
-             else if (w.requestFullscreen) { w.requestFullscreen(); }"
   >
     <i class="fas fa-expand"></i>
     <i class="fas fa-compress"></i>
   </button>
+  <div class="game-embed__rotate" role="status">Rotate your phone to play</div>
 </div>
+<script>
+(() => {
+  const wrapper = document.currentScript.previousElementSibling;
+  const start = wrapper.querySelector('.game-embed__start');
+  const fullscreen = wrapper.querySelector('.game-embed__fs');
+  const landscape = Number(wrapper.dataset.gameWidth) > Number(wrapper.dataset.gameHeight);
+  const touch = () => matchMedia('(pointer: coarse)').matches;
+  let locked = false;
+  wrapper.classList.toggle('game-embed--landscape', landscape);
+
+  async function enterFullscreen() {
+    if (!wrapper.requestFullscreen) return;
+    try {
+      await wrapper.requestFullscreen();
+      if (landscape && touch() && screen.orientation?.lock) {
+        try {
+          await screen.orientation.lock('landscape');
+          locked = true;
+        } catch (_) { /* Portrait devices keep the rotate prompt. */ }
+      }
+    } catch (_) { /* Inline play stays available if fullscreen is denied. */ }
+  }
+
+  start.addEventListener('click', () => {
+    const frame = document.createElement('iframe');
+    frame.src = start.dataset.src;
+    frame.allow = 'fullscreen; gamepad; autoplay';
+    frame.allowFullscreen = true;
+    frame.title = start.dataset.title;
+    wrapper.classList.add('game-embed--started');
+    if (document.fullscreenEnabled) wrapper.classList.add('game-embed--playing');
+    wrapper.replaceChild(frame, start);
+    if (landscape && touch()) enterFullscreen();
+  });
+  fullscreen.addEventListener('click', () => {
+    if (document.fullscreenElement === wrapper) document.exitFullscreen().catch(() => {});
+    else enterFullscreen();
+  });
+  document.addEventListener('fullscreenchange', () => {
+    if (document.fullscreenElement !== wrapper && locked) {
+      screen.orientation.unlock();
+      locked = false;
+    }
+  });
+})();
+</script>
